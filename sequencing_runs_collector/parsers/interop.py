@@ -224,8 +224,7 @@ def indexing(run_dir_path):
     indexing_ndarray = interop.indexing(run_dir_path)
     original_field_names = indexing_ndarray.dtype.names
     summary_dicts = []
-    print(indexing_ndarray.dtype.names)
-    print(indexing_ndarray[0])
+
     for s in indexing_ndarray.tolist():
         summary_dict_original_field_names = dict(zip(original_field_names, s))
         summary_dict_translated_field_names = {}
@@ -240,7 +239,4 @@ def indexing(run_dir_path):
 
         summary_dicts.append(summary_dict_translated_field_names)
 
-    print(json.dumps(summary_dicts[-1], indent=2))
-    print(len(summary_dicts))
-    exit()
     return summary_dicts

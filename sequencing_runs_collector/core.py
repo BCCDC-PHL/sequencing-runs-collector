@@ -297,6 +297,7 @@ def write_collected_illumina_run(collected_run: dict, run_output_path: Path):
         "percent_clusters_passed_filter",
         "cluster_density",
         "cluster_density_passed_filter",
+        "percent_occupied",
     ]
 
     run_summary_output_path = os.path.join(run_output_path, f"{sequencing_run_id}_run_summary.csv")
@@ -368,9 +369,6 @@ def write_collected_illumina_run(collected_run: dict, run_output_path: Path):
                 sequenced_library['sequencing_run_id'] = sequencing_run_id
                 sequenced_library['demultiplexing_id'] = demultiplexing_id
                 writer.writerow(sequenced_library)
-        
-            
-        
 
     
 def write_collected_nanopore_run(collected_run: dict, run_output_path: Path):
